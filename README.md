@@ -1,12 +1,12 @@
 # i3wm-config
 My personal settings and issues to i3wm on Ubuntu 22.04
 
-#### Keyboard Settings
+## Keyboard Settings
 Used to US layout (used in Logitech K380)
 ```
 $ setxkbmap -layout us -variant intl
 ```
-##### Set permannent keyboard layout
+### Set permannent keyboard layout
 Some external keyboards (with Bluetooth connections) lose layout settings when the keyboard is disconnected.
 There is a way to set it permanently by creating a Xorg#Configuration.
 References: [Using X configuration files](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#:~:text=option%20grp%3Awin_space_toggle-,Using%20X%20configuration%20files,-Note%3A)
