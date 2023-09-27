@@ -26,3 +26,11 @@ EndSection
 
 $ sudo systemctl restart display-manager.service
 ```
+
+
+#### Display Arrangement (Hotplug Monitors)
+References: [i3, udev, & xrandr: Hotplugging & Output Switching](https://frdmtoplay.com/i3-udev-xrandr-hotplugging-output-switching/)
+```
+# For external monitor above
+$ xrandr --output HDMI-1 --auto --above eDP-1
+```
