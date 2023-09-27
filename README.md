@@ -15,6 +15,7 @@ References: [Using X configuration files](https://wiki.archlinux.org/title/Xorg/
 $ sudo nvim /etc/X11/xorg.conf.d/00-keyboard.conf
 
 # Add the layout and variant as following:
+# /etc/X11/xorg.conf.d/00-keyboard.conf
 Section "InputClass"
     Identifier "keyboard"
     MatchIsKeyboard "on"
@@ -27,10 +28,23 @@ EndSection
 $ sudo systemctl restart display-manager.service
 ```
 
-
 #### Display Arrangement (Hotplug Monitors)
 References: [i3, udev, & xrandr: Hotplugging & Output Switching](https://frdmtoplay.com/i3-udev-xrandr-hotplugging-output-switching/)
 ```
 # For external monitor above
 $ xrandr --output HDMI-1 --auto --above eDP-1
+```
+Detecting monitor switch events with `udevadm`.
+```
+$ sudo udevadm monitor
+
+monitor will print the received events for:
+UDEV - the event which udev sends out after rule processing
+KERNEL - the kernel uevent
+
+
+KERNEL[3959.208769] change   /devices/pci0000:00/0000:00:03.0/0000:01:00.0/drm/card0 (drm)
+UDEV  [3960.654344] change   /devices/pci0000:00/0000:00:03.0/0000:01:00.0/drm/card0 (drm)
+
+# Plugging/unplugging a HDMI/VGA/DisplayPort cable will cause events to fire and be printed to the terminal.
 ```
