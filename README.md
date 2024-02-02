@@ -10,6 +10,8 @@ $ echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-rel
 $ sudo apt update
 $ sudo apt install i3
 ```
+## Config file
+https://github.com/nywton/dotfiles/blob/main/i3wm/config
 ## Keyboard Settings
 Used to US layout (used in Logitech K380)
 ```
