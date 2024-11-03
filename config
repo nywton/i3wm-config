@@ -100,8 +100,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -235,7 +236,10 @@ bindsym $mod+a exec pavucontrol
 # Desktop background manager - Nitrogen
 bindsym $mod+n exec nitrogen ~/Images/walpapers
 
-bindsym $mod+m exec nautilus ~/code
+bindsym $mod+m exec nautilus ~/
+
+# whatsapp
+bindsym $mod+w exec google-chrome-stable --app=https://web.whatsapp.com/
 
 # ~~~~~~~~ Keyboard Settings ~~~~~~~~
 # swaps capslock and esc
@@ -244,7 +248,7 @@ bindsym $mod+m exec nautilus ~/code
 # exec --no-startup-id setxkbmap -option caps:escape
 
 # remaps capslock to controls
-exec --no-startup-id setxkbmap -option ctrl:nocaps
+# exec --no-startup-id setxkbmap -option ctrl:nocaps
 
 exec --no-startup-id setxkbmap -layout us -variant intl &
 
