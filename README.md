@@ -45,6 +45,8 @@ References: [i3, udev, & xrandr: Hotplugging & Output Switching](https://frdmtop
 # For external monitor above
 $ xrandr --output HDMI-1 --auto --above eDP-1
 ```
+# default monitor lg ultrawide
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 3440x1440 --rate 160
 Detecting monitor switch events with `udevadm`.
 ```
 $ sudo udevadm monitor
@@ -153,4 +155,38 @@ $ sudo systemctl start pulseaudio-bluetooth
 ```bash
 # install pavucontrol
 $ sudo pacman -S pavucontrol
+```
+
+## DNS
+Work on issues so I disabled IPV6
+```bash
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+
+# restart networking
+sudo systemctl restart NetworkManager systemd-resolved
+```
+### Make it permanent
+```bash
+# Create the config file with sudo
+$ sudo vim /etc/sysctl.d/99-sysctl.conf                
+
+# Add the layout and variant as following:
+# /etc/sysctl.d/99-sysctl.config
+# Disable IPv6
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+# Restart Xorg: To apply the changes, you should restart the X server or simply reboot your system:
+
+$ sudo sysctl --system
+
+# 3. Disable IPv6 in NetworkManager Configuration
+# https://wiki.archlinux.org/title/NetworkManager#disable_ipv6
+$ sudo vim /etc/NetworkManager/conf.d/disable-ipv6.conf
+
+# Add the layout and variant as following:
+# /etc/NetworkManager/conf.d/disable-ipv6.config
+[connection]
+ipv6.method=ignore
 ```

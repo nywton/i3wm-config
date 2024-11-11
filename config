@@ -17,7 +17,7 @@ set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:monospace 12
-font pango:Hack Regular Nerd Font 12
+font pango:Hack Regular Nerd Font 16
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -241,6 +241,9 @@ bindsym $mod+m exec nautilus ~/
 # whatsapp
 bindsym $mod+w exec google-chrome-stable --app=https://web.whatsapp.com/
 
+# chatgpt
+bindsym $mod+g exec google-chrome-stable --app=https://chat.openai.com/
+
 # ~~~~~~~~ Keyboard Settings ~~~~~~~~
 # swaps capslock and esc
 # exec --no-startup-id setxkbmap -option caps:swapescape
@@ -278,14 +281,17 @@ bindsym $mod+p mode "Monitor arrangement: [1] DVI, [2] HDMI, [3] Both"
 # %mod + shift + p to put monitor right
 # bindsym $mod+Shift+p exec xrandr --output HDMI-A-0 --mode 1920x1080 --rate 60 --right-of DVI-D-0
 
+# default monitor lg ultrawide
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 3440x1440 --rate 160
+
+
 # ~~~~~~~~ Set Window styles ~~~~~~~~
 
 # change the integer value to add border on windows
 for_window [class=".*"] border pixel 0#*
 
-# gaps inner 35
-# gaps inner 18
-# gaps outer 20
+gaps inner 28
+gaps outer 1
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #67e8f9 #67e8f9 #222222 #67e8f9   #67e8f9
