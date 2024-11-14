@@ -290,8 +290,8 @@ exec --no-startup-id xrandr --output HDMI-A-0 --mode 3440x1440 --rate 160
 # change the integer value to add border on windows
 for_window [class=".*"] border pixel 0#*
 
-gaps inner 28
-gaps outer 1
+# gaps inner 28
+# gaps outer 1
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #67e8f9 #67e8f9 #222222 #67e8f9   #67e8f9
