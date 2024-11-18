@@ -10,9 +10,9 @@
 # Please see https://i3wm.org/docs/usergride.html for a complete reference!
 
 # for alt as $mod
-set $mod Mod1
+# set $mod Mod1
 # for Win as $mod
-# set $mod Mod4
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -245,6 +245,9 @@ bindsym $mod+w exec google-chrome-stable --app=https://web.whatsapp.com/
 # chatgpt
 bindsym $mod+g exec google-chrome-stable --app=https://chat.openai.com/
 
+# blackbox.ai
+bindsym $mod+shift+g exec google-chrome-stable --app=https://blackbox.ai/
+
 # ~~~~~~~~ Keyboard Settings ~~~~~~~~
 # swaps capslock and esc
 # exec --no-startup-id setxkbmap -option caps:swapescape
@@ -283,7 +286,7 @@ bindsym $mod+p mode "Monitor arrangement: [1] DVI, [2] HDMI, [3] Both"
 # bindsym $mod+Shift+p exec xrandr --output HDMI-A-0 --mode 1920x1080 --rate 60 --right-of DVI-D-0
 
 # default monitor lg ultrawide
-exec --no-startup-id xrandr --output HDMI-A-0 --mode 3440x1440 --rate 160
+# exec --no-startup-id xrandr --output HDMI-A-0 --mode 3440x1440 --rate 160
 
 
 # ~~~~~~~~ Set Window styles ~~~~~~~~
